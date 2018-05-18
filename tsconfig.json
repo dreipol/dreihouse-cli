@@ -1,0 +1,36 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "lib": [
+      "es5",
+      "es2015",
+      "dom"
+    ],
+    "allowJs": true,
+    "declaration": true,
+    "sourceMap": true,
+    "outDir": "./dist",
+    "baseUrl" :"./",
+    "rootDir": "./src",
+    "removeComments": true,
+    "downlevelIteration": true,
+    "strict": true,
+    "noImplicitAny": true,
+    //"noUnusedLocals": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "paths": {
+      "@dreipol/*": [
+        "node_modules/@dreipol/*"
+      ]
+    }
+  },
+  "exclude": [
+    "node_modules",
+    "test/**/*.ts",
+    "dist"
+  ]
+}

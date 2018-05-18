@@ -1,0 +1,15 @@
+# Logs
+logs
+*.log
+*.log.*
+
+# Dependency directory
+# https://docs.npmjs.com/misc/faq#should-i-check-my-node-modules-folder-into-git
+node_modules
+.idea
+*.iml
+### OSX
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon^M^M

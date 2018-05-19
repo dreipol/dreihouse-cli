@@ -1,18 +1,15 @@
 import Dreihouse from "@dreipol/lighthouse-runner/dist/Dreihouse";
 
-const dreihouse = new Dreihouse(null, ['cli']);
+const CONFIG = require('@dreipol/lighthouse-config/config/base/desktop.js');
+var chokidar = require('chokidar');
 
-async function run() {
-    await dreihouse.startChrome(`http://fabs.io`);
-    await execute();
+const dreihouse = new Dreihouse(CONFIG, ['cli']);
+
+export default async function run(url: string) {
+    await dreihouse.startChrome(url);
+
+    chokidar.watch('./src', {ignored: /(^|[\/\\])\../})
+        .on('change', async () => {
+            await dreihouse.audit(url);
+        });
 }
-
-async function execute() {
-    await dreihouse.audit(`http://fabs.io`);
-    setTimeout(async () => {
-        await execute();
-    }, 15000);
-}
-
-
-run();

@@ -2,10 +2,8 @@
   "name": "dreihouse-cli",
   "version": "0.0.1",
   "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "main": "./dist/index.js",
+  "bin": "./dist/cli.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/faebeee/dreihouse-cli.git"
@@ -17,8 +15,13 @@
   },
   "homepage": "https://github.com/faebeee/dreihouse-cli#readme",
   "devDependencies": {
+    "@dreipol/lighthouse-config": "^1.1.1",
     "@dreipol/lighthouse-runner": "^1.1.0",
+    "commander": "^2.15.1",
     "ts-node": "^6.0.3",
     "typescript": "^2.8.3"
+  },
+  "dependencies": {
+    "chokidar": "^2.0.3"
   }
 }

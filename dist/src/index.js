@@ -12,8 +12,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const Dreihouse_1 = __importDefault(require("@dreipol/lighthouse-runner/dist/Dreihouse"));
-const CONFIG = require('@dreipol/lighthouse-config/config/base/desktop.js');
-const dreihouse = new Dreihouse_1.default(CONFIG, ['cli']);
+const desktop_js_1 = __importDefault(require("@dreipol/lighthouse-config/config/base/desktop.js"));
+const dreihouse = new Dreihouse_1.default(desktop_js_1.default, ['cli']);
 function run(url) {
     return __awaiter(this, void 0, void 0, function* () {
         yield dreihouse.startChrome(url);

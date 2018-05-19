@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 "use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -11,22 +12,17 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const Dreihouse_1 = __importDefault(require("@dreipol/lighthouse-runner/dist/Dreihouse"));
-const CONFIG = require('@dreipol/lighthouse-config/config/base/desktop.js');
-const dreihouse = new Dreihouse_1.default(CONFIG, ['cli']);
-function run(url) {
-    return __awaiter(this, void 0, void 0, function* () {
-        yield dreihouse.startChrome(url);
-        yield execute(url);
-    });
-}
-exports.default = run;
-function execute(url) {
-    return __awaiter(this, void 0, void 0, function* () {
-        yield dreihouse.audit(url);
-        setTimeout(() => __awaiter(this, void 0, void 0, function* () {
-            yield execute(url);
-        }), 15000);
-    });
-}
-//# sourceMappingURL=index.js.map
+const program = require('commander');
+const index_1 = __importDefault(require("./index"));
+const { version } = require('../package.json');
+program
+    .version(version);
+program
+    .command('audit <url>', { isDefault: true })
+    .description('Run report with configuration')
+    .action((url, command) => __awaiter(this, void 0, void 0, function* () {
+    yield index_1.default(url);
+    return;
+}));
+program.parse(process.argv);
+//# sourceMappingURL=cli.js.map

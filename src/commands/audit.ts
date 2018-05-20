@@ -1,4 +1,4 @@
-import Dreihouse from "../../../../Documents/Repositories/lighthouse-runner/dist/Dreihouse";
+import Dreihouse from "@dreipol/lighthouse-runner/dist/Dreihouse";
 
 const CONFIG = require('../../config/desktop.js');
 const chokidar = require('chokidar');

@@ -75,7 +75,7 @@ Example config file:
               command: |
                 npm i @dreipol/lighthouse-audits
                 npm i @dreipol/lighthouse-config
-                npm i @dreipol/dreihouse
+                npm i @dreipol/dreihouse-cli
           
           - save_cache:
               paths:

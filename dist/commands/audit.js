@@ -11,7 +11,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const Dreihouse_1 = __importDefault(require("../../../../Documents/Repositories/lighthouse-runner/dist/Dreihouse"));
+const Dreihouse_1 = __importDefault(require("@dreipol/lighthouse-runner/dist/Dreihouse"));
 const CONFIG = require('../../config/desktop.js');
 const chokidar = require('chokidar');
 function run(configFile, url, path) {

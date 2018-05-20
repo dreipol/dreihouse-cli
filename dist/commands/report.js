@@ -11,9 +11,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const NoopLogger_1 = __importDefault(require("../../../../Documents/Repositories/lighthouse-runner/dist/Logger/NoopLogger"));
-const ConsoleLogger_1 = __importDefault(require("../../../../Documents/Repositories/lighthouse-runner/dist/Logger/ConsoleLogger"));
-const Dreihouse_1 = __importDefault(require("../../../../Documents/Repositories/lighthouse-runner/dist/Dreihouse"));
+const ConsoleLogger_1 = __importDefault(require("@dreipol/lighthouse-runner/dist/Logger/ConsoleLogger"));
+const NoopLogger_1 = __importDefault(require("@dreipol/lighthouse-runner/dist/Logger/NoopLogger"));
+const Dreihouse_1 = __importDefault(require("@dreipol/lighthouse-runner/dist/Dreihouse"));
 function report(rootUrl, configFile, reporter, port, verbose) {
     return __awaiter(this, void 0, void 0, function* () {
         const printer = verbose ? new ConsoleLogger_1.default() : new NoopLogger_1.default();

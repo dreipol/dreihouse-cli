@@ -1,14 +1,14 @@
-import Dreihouse from "@dreipol/lighthouse-runner/dist/Dreihouse";
+import Dreihouse from "../../../../Documents/Repositories/lighthouse-runner/dist/Dreihouse";
 
-const CONFIG = require('@dreipol/lighthouse-config/config/base/desktop.js');
+const CONFIG = require('../../config/desktop.js');
 const chokidar = require('chokidar');
 
-CONFIG.chromeFlags = ['--headless'];
 
-const dreihouse = new Dreihouse(CONFIG, ['cli']);
-let isAuditing = false;
+export default async function run(configFile: string | null, url: string, path: string) {
 
-export default async function run(url: string, path: string) {
+    const dreihouse = new Dreihouse(configFile ? configFile : CONFIG, ['cli']);
+    let isAuditing = false;
+
     await dreihouse.startChrome(url);
 
     chokidar.watch(path, {ignored: /(^|[\/\\])\../})
@@ -16,6 +16,7 @@ export default async function run(url: string, path: string) {
             if (isAuditing) {
                 return;
             }
+
 
             isAuditing = true;
             await dreihouse.audit(url);

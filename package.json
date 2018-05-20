@@ -1,27 +1,31 @@
 {
-  "name": "dreihouse-cli",
+  "name": "@dreipol/dreihouse-cli",
   "version": "0.0.1",
-  "description": "",
-  "main": "./dist/index.js",
-  "bin": "./dist/cli.js",
+  "description": "CLI Interface for @dreipol/lighthouse-runner module",
+  "bin": {
+    "dreihouse": "./dist/cli.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/faebeee/dreihouse-cli.git"
   },
-  "author": "",
+  "author": "Faebeee",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/faebeee/dreihouse-cli/issues"
   },
   "homepage": "https://github.com/faebeee/dreihouse-cli#readme",
   "devDependencies": {
-    "@dreipol/lighthouse-config": "^1.1.1",
-    "@dreipol/lighthouse-runner": "^1.1.0",
+    "@types/fancy-log": "^1.3.0",
+    "@types/glob": "^5.0.35",
     "commander": "^2.15.1",
     "ts-node": "^6.0.3",
     "typescript": "^2.8.3"
   },
   "dependencies": {
-    "chokidar": "^2.0.3"
+    "@dreipol/lighthouse-config": "^1.1.1",
+    "@dreipol/lighthouse-runner": "^1.1.0",
+    "chokidar": "^2.0.3",
+    "fancy-log": "^1.3.2"
   }
 }

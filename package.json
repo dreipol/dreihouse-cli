@@ -24,7 +24,7 @@
   },
   "dependencies": {
     "@dreipol/lighthouse-config": "^1.1.1",
-    "@dreipol/lighthouse-runner": "^1.1.0",
+    "@dreipol/lighthouse-runner": "^2.0.0",
     "chokidar": "^2.0.3",
     "fancy-log": "^1.3.2"
   }

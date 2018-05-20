@@ -12,9 +12,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const audit_1 = __importDefault(require("./audit"));
-const setup_1 = __importDefault(require("./setup"));
-const report_1 = __importDefault(require("./report"));
+const audit_1 = __importDefault(require("./commands/audit"));
+const setup_1 = __importDefault(require("./commands/setup"));
+const report_1 = __importDefault(require("./commands/report"));
 const program = require('commander');
 const { version } = require('../package.json');
 program

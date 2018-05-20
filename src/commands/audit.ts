@@ -17,7 +17,6 @@ export default async function run(configFile: string | null, url: string, path: 
                 return;
             }
 
-
             isAuditing = true;
             await dreihouse.audit(url);
             isAuditing = false;

@@ -1,6 +1,6 @@
 {
   "name": "@dreipol/dreihouse-cli",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "CLI Interface for @dreipol/lighthouse-runner module",
   "bin": {
     "dreihouse": "./dist/cli.js"

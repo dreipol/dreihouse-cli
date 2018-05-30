@@ -7,9 +7,12 @@ logs
 # https://docs.npmjs.com/misc/faq#should-i-check-my-node-modules-folder-into-git
 node_modules
 .idea
+.vscode
 *.iml
 ### OSX
 .DS_Store
 .AppleDouble
 .LSOverride
-Icon^M^M
+Icon
+
+config/dreihouse-reports

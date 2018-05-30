@@ -17,6 +17,9 @@ const setup_1 = __importDefault(require("./commands/setup"));
 const report_1 = __importDefault(require("./commands/report"));
 const program = require('commander');
 const { version } = require('../package.json');
+function increaseVerbosity(v, total) {
+    return total + 1;
+}
 program
     .version(version);
 program
@@ -37,13 +40,13 @@ program
 program
     .command('report <root-url>')
     .description('Run report with configuration')
-    .option('-v, --verbose', 'Verbose output')
+    .option('-v, --verbose', 'Verbose output', increaseVerbosity, 0)
     .option('-f, --config-file <file>', 'Define the root url of the page', null)
     .option('-r, --reporter <items>', 'Add list of reporters to use for handling the result', (val) => val.split(','), ['cli'])
     .option('-p, --port <port>', 'Use given port for debugging')
     .action((rootUrl, command) => __awaiter(this, void 0, void 0, function* () {
     const { verbose, port, reporter, configFile } = command;
-    yield report_1.default(rootUrl, configFile, reporter, port, verbose);
+    yield report_1.default(rootUrl, configFile, reporter, port, verbose - 1);
     return;
 }));
 program.parse(process.argv);

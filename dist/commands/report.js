@@ -12,19 +12,17 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const ConsoleLogger_1 = __importDefault(require("@dreipol/lighthouse-runner/dist/Logger/ConsoleLogger"));
-const NoopLogger_1 = __importDefault(require("@dreipol/lighthouse-runner/dist/Logger/NoopLogger"));
 const Dreihouse_1 = __importDefault(require("@dreipol/lighthouse-runner/dist/Dreihouse"));
 function report(rootUrl, configFile, reporter, port, verbose) {
     return __awaiter(this, void 0, void 0, function* () {
-        const printer = verbose ? new ConsoleLogger_1.default() : new NoopLogger_1.default();
+        const printer = new ConsoleLogger_1.default(verbose);
         try {
             const dreihouse = new Dreihouse_1.default(configFile, reporter, printer);
             yield dreihouse.execute(rootUrl, port);
-            printer.print('Dreihouse completed');
+            printer.info('Dreihouse completed');
         }
         catch (e) {
-            console.error(e.message);
-            process.exit(e.co);
+            process.exit(1);
         }
     });
 }

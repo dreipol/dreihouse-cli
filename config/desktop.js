@@ -11,12 +11,11 @@ module.exports = {
     disableEmulation: true,
     disableThrottling: true,
     budget: {
-        dreipol: 100,
-        seo: 90,
-        performance: 90,
-        pwa: 70,
-        accessibility: 70,
-        'best-practices': 70,
+        seo: null,
+        performance: null,
+        pwa: null,
+        accessibility: null,
+        'best-practices': null,
     },
     report: {
         passes: [{

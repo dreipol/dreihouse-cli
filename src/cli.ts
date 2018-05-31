@@ -43,7 +43,7 @@ program
     .option('-p, --port <port>', 'Use given port for debugging')
     .action(async (rootUrl: string, command: Command) => {
         const {verbose, port, reporter, configFile} = command;
-        await report(rootUrl, configFile, reporter, port, verbose - 1);
+        await report(rootUrl, configFile, reporter, port, verbose);
         return;
     });
 

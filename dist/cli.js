@@ -46,7 +46,7 @@ program
     .option('-p, --port <port>', 'Use given port for debugging')
     .action((rootUrl, command) => __awaiter(this, void 0, void 0, function* () {
     const { verbose, port, reporter, configFile } = command;
-    yield report_1.default(rootUrl, configFile, reporter, port, verbose);
+    yield report_1.default(rootUrl, configFile, reporter, port, verbose ? verbose : 0);
     return;
 }));
 program.parse(process.argv);

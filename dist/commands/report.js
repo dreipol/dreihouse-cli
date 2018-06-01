@@ -23,7 +23,7 @@ function report(rootUrl, configFile, reporter, port, verbose) {
         }
         catch (e) {
             if (!verbose) {
-                console.error(e.message);
+                console.error(e);
             }
             process.exit(1);
         }

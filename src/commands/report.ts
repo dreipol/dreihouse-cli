@@ -9,7 +9,7 @@ export default async function report(rootUrl: string, configFile: string | null,
         printer.info('Dreihouse completed');
     } catch (e) {
         if(!verbose){
-            console.error(e.message);
+            console.error(e);
         }
         process.exit(1);
     }

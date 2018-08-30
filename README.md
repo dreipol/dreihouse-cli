@@ -23,7 +23,6 @@ After setup you have to edit the config to your flavours.
         dreihouse report https://example.ch -f ./config/desktop.js -r cli
         
 
-
 To create a report you have to call this command followed by the config file that holds the configuration
 for `dreihouse`. Alternately you can run an audit with a default config by leaving your the config file option.
 

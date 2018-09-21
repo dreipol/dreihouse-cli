@@ -13,9 +13,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const ConsoleLogger_1 = __importDefault(require("@dreipol/lighthouse-runner/dist/Logger/ConsoleLogger"));
 const Dreihouse_1 = __importDefault(require("@dreipol/lighthouse-runner/dist/Dreihouse"));
+const { version } = require('../../package.json');
 function report(rootUrl, configFile, reporter, port, verbose) {
     return __awaiter(this, void 0, void 0, function* () {
         const printer = new ConsoleLogger_1.default(verbose);
+        printer.info(`Dreihouse-Cli v${version}`);
         try {
             const dreihouse = new Dreihouse_1.default(configFile, reporter, printer);
             yield dreihouse.execute(rootUrl, port);

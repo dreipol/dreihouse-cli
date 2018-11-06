@@ -45,48 +45,6 @@ for `dreihouse`. Alternately you can run an audit with a default config by leavi
 | `-v, --verbose`         | `true`   | false     | -v = Error; -vv = Info; -vvvv = Debug | Verbose console output   |
 | `-s, --silent`         | `true`   | false     |                               | Suppress spinner on CLI|
 
+#Config
 
-## Circle CI Config
-
-Example config file: 
-
-    version: 2
-    jobs:
-      build:
-        docker:
-          - image: circleci/node:8.9-browsers
-        working_directory: ~/repo
-        steps:
-          
-          - checkout
-          
-          - restore_cache:
-              keys:
-              - v1-npm-dependencies-{{ checksum "package.json" }}
-          
-          - run:
-              name: install
-              command: |
-                npm i
-          
-          - run:
-              name: install dreihouse
-              command: |
-                npm i @dreipol/lighthouse-audits
-                npm i @dreipol/lighthouse-config
-                npm i @dreipol/dreihouse-cli
-          
-          - save_cache:
-              paths:
-                -  ~/repo/node_modules
-              key: v1-npm-dependencies-{{ checksum "package.json" }}
-          
-          - run:
-              name: run report
-              command: |
-                npx dreihouse report https://example.com -f ./lighthouse/lh.desktop.js -r cli,html
-                npx dreihouse report https://example.com -f ./lighthouse/lh.mobile.js -r cli
-          
-          - store_artifacts:
-              path: ~/repo/reports
-              destination: lighthouse
+See [@dreipol/lighthouse-runner](https://www.npmjs.com/package/@dreipol/lighthouse-runner) for detailed config

@@ -1,5 +1,5 @@
 import ConsoleLogger from "@dreipol/lighthouse-runner/dist/Logger/ConsoleLogger";
-import Dreihouse from "@dreipol/lighthouse-runner/dist/Dreihouse";
+import Dreihouse from "@dreipol/lighthouse-runner";
 const {version} = require('../../package.json');
 
 export default async function report(rootUrl: string, configFile: string | null, reporter: string[], port: number, verbose: number) {

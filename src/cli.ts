@@ -16,7 +16,6 @@ function increaseVerbosity(v: string, total: number) {
 program
     .version(version);
 
-
 program
     .command('setup <folder>')
     .description('Setup default configuration')

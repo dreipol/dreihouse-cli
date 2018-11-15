@@ -24,9 +24,7 @@ function report(rootUrl, configFile, reporter, port, verbose) {
             printer.info('Dreihouse completed');
         }
         catch (e) {
-            if (!verbose) {
-                console.error(e);
-            }
+            console.error(e);
             process.exit(1);
         }
     });
